@@ -1,0 +1,93 @@
+// =============================================================================
+// VASTRAMAY CURATED VISUAL IDENTITY TOKENS
+// =============================================================================
+
+// 1. Curated Color Palette
+$color-espresso: #38231F;
+$color-plum: #3D1838;
+$color-terracotta: #873E36;
+$color-gold: #B99B69;
+$color-gold-light: #F3EDE0;
+$color-gold-dark: #7F6539;
+$color-ivory: #F5EFE6;
+$color-ivory-light: #FCFAF7;
+$color-sage: #65715A;
+$color-ink: #201C1B;
+$color-white: #FFFFFF;
+
+// 2. Semantic Role Tokens
+$bg-page: $color-ivory;
+$bg-surface: $color-white;
+$bg-surface-elevated: #FAF7F2;
+$bg-surface-dark: $color-espresso;
+$bg-surface-plum: $color-plum;
+
+$text-primary: $color-ink;
+$text-secondary: #685F5D;
+$text-accent: $color-gold;
+$text-light: $color-ivory;
+
+$border-subtle: rgba(56, 35, 31, 0.10);
+$border-medium: rgba(56, 35, 31, 0.20);
+$border-gold: rgba(185, 155, 105, 0.35);
+
+$state-focus: $color-gold;
+$state-success: #4A6B53;
+$state-warning: #C27803;
+$state-error: #9A2C2C;
+
+// 3. Typography Families
+$font-family-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+$font-family-sans: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-family-cursive: 'Alex Brush', 'Playfair Display', cursive;
+
+// 4. Responsive Spacing & Content Widths
+$container-narrow: 960px;
+$container-default: 1280px;
+$container-wide: 1440px;
+$container-admin: 1600px;
+
+// 5. Border Radii & Sculptural Shapes
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 14px;
+$radius-full: 9999px;
+$radius-arch: 120px 120px 12px 12px;
+$radius-arch-lg: 160px 160px 16px 16px;
+
+// 6. Dimensional Layered Shadows
+$shadow-subtle: 0 2px 8px -1px rgba(32, 28, 27, 0.05);
+$shadow-elevated: 0 10px 25px -4px rgba(56, 35, 31, 0.08), 0 4px 6px -2px rgba(56, 35, 31, 0.03);
+$shadow-luxury: 0 20px 35px -8px rgba(56, 35, 31, 0.12), 0 0 1px 1px rgba(185, 155, 105, 0.25);
+$shadow-3d-float: 0 16px 32px -6px rgba(56, 35, 31, 0.16), 0 0 0 1px rgba(185, 155, 105, 0.2);
+
+// 7. Z-Index Hierarchy
+$z-dropdown: 1000;
+$z-sticky: 1020;
+$z-header: 1030;
+$z-drawer-backdrop: 1040;
+$z-drawer: 1050;
+$z-modal: 1060;
+$z-toast: 1070;
+$z-tooltip: 1080;
+
+// 8. Motion Timings & Easing
+$transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+$transition-base: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+$transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+$transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+// Backward Compatibility Aliases
+$vastra-gold-primary: $color-gold;
+$vastra-gold-light: $color-gold-light;
+$vastra-gold-dark: $color-gold-dark;
+$vastra-maroon-primary: $color-terracotta;
+$vastra-maroon-dark: #5D2822;
+$vastra-navy-deep: $color-espresso;
+$vastra-navy-slate: #201C1B;
+$vastra-emerald-imperial: $color-sage;
+$vastra-sand-ivory: $color-ivory;
+$vastra-sand-border: #EBE2D5;
+$vastra-charcoal: $color-ink;
+$container-max-width: $container-wide;
+$container-admin-max-width: $container-admin;

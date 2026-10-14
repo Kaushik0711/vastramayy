@@ -1,0 +1,90 @@
+// =============================================================================
+// VASTRAMAY VISUAL SYSTEM SCSS MIXINS
+// =============================================================================
+
+@use './variables' as *;
+
+// Warm Ivory Glass Surface
+@mixin glass-surface($bg-opacity: 0.90, $blur: 16px) {
+  background: rgba(245, 239, 230, $bg-opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid rgba(185, 155, 105, 0.22);
+}
+
+// Espresso Dark Glass Surface
+@mixin glass-surface-dark($bg-opacity: 0.92, $blur: 18px) {
+  background: rgba(56, 35, 31, $bg-opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid rgba(185, 155, 105, 0.30);
+}
+
+// Metallic Antique Gold Text Gradient
+@mixin gold-text-gradient {
+  background: linear-gradient(135deg, #E5DAC0 0%, #B99B69 50%, #7F6539 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Architectural Jharokha Arch Shape
+@mixin jharokha-arch($radius: 120px) {
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+// 3D Perspective Card with Restrained Depth
+@mixin card-3d-perspective {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @media (prefers-reduced-motion: no-preference) {
+    &:hover {
+      transform: translateY(-4px) rotateX(1.5deg) rotateY(-1.5deg);
+      box-shadow: 0 20px 35px -8px rgba(56, 35, 31, 0.16), 0 0 1px 1px rgba(185, 155, 105, 0.3);
+    }
+  }
+}
+
+// Cursive Handwritten Editorial Annotation
+@mixin editorial-annotation {
+  font-family: $font-family-cursive;
+  font-size: 1.45rem;
+  line-height: 1;
+  color: $color-gold;
+  letter-spacing: 0.04em;
+  font-weight: 400;
+  display: inline-block;
+}
+
+// Antique Gold Border with Subtle Focus Glow
+@mixin gold-border-subtle {
+  border: 1px solid rgba(185, 155, 105, 0.28);
+  transition: border-color $transition-base, box-shadow $transition-base;
+
+  &:hover {
+    border-color: rgba(185, 155, 105, 0.65);
+    box-shadow: 0 4px 18px rgba(185, 155, 105, 0.15);
+  }
+}
+
+// Refined Luxury Custom Scrollbar
+@mixin refined-scrollbar($track-color: #F5EFE6, $thumb-color: #D4C39B, $thumb-hover: #B99B69) {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $track-color;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $thumb-color;
+    border-radius: 9999px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: $thumb-hover;
+  }
+}

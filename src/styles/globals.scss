@@ -1,0 +1,140 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// =============================================================================
+// GLOBAL ROOT SEMANTIC TOKENS
+// =============================================================================
+:root {
+  // Brand Palette
+  --brand-espresso: #38231F;
+  --brand-plum: #3D1838;
+  --brand-terracotta: #873E36;
+  --brand-gold: #B99B69;
+  --brand-gold-light: #F3EDE0;
+  --brand-ivory: #F5EFE6;
+  --brand-sage: #65715A;
+  --brand-ink: #201C1B;
+  --brand-white: #FFFFFF;
+
+  // Semantic UI Tokens
+  --color-bg-page: var(--brand-ivory);
+  --color-surface: var(--brand-white);
+  --color-surface-elevated: #FAF7F2;
+  --color-surface-dark: var(--brand-espresso);
+  --color-surface-plum: var(--brand-plum);
+
+  --color-text-primary: var(--brand-ink);
+  --color-text-secondary: #685F5D;
+  --color-text-accent: var(--brand-gold);
+  --color-text-light: var(--brand-ivory);
+
+  --color-border-subtle: rgba(56, 35, 31, 0.12);
+  --color-border-medium: rgba(56, 35, 31, 0.22);
+  --color-border-gold: rgba(185, 155, 105, 0.35);
+
+  --color-focus: var(--brand-gold);
+  --color-success: #4A6B53;
+  --color-warning: #C27803;
+  --color-error: #9A2C2C;
+
+  // Typography Families
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-cursive: 'Alex Brush', 'Playfair Display', cursive;
+}
+
+// Global Document Base
+html {
+  scroll-behavior: smooth;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg-page);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  overflow-x: hidden;
+  max-width: 100vw;
+  @include refined-scrollbar();
+}
+
+// Typography Classes
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-cursive {
+  font-family: var(--font-cursive);
+}
+
+// Editorial Handwritten Annotation
+.editorial-note {
+  @include editorial-annotation;
+}
+
+// Metallic Gold Gradient Text
+.text-gold-gradient {
+  @include gold-text-gradient;
+}
+
+// Architectural Jharokha Arches
+.arch-frame {
+  @include jharokha-arch(120px);
+}
+
+.arch-frame-sm {
+  @include jharokha-arch(60px);
+}
+
+.arch-frame-lg {
+  @include jharokha-arch(160px);
+}
+
+// 3D Perspective Card
+.card-3d {
+  @include card-3d-perspective;
+}
+
+// Subtle Luxury Divider
+.luxury-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(185, 155, 105, 0) 0%,
+    rgba(185, 155, 105, 0.45) 50%,
+    rgba(185, 155, 105, 0) 100%
+  );
+}
+
+// Accessible Focus Ring Utility
+.focus-ring {
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-bg-page), 0 0 0 4px var(--color-focus);
+  }
+}
+
+// Reduced Motion Preferences
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
